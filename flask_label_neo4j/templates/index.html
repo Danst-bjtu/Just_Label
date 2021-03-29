@@ -34,8 +34,8 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{session['username']}} <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">个人资料</a></li>
-                <li role="separator" class="divider"></li>
+<!--                <li><a href="#">个人资料</a></li>-->
+<!--                <li role="separator" class="divider"></li>-->
                 <li><a href="/logout">注销</a></li>
               </ul>
             </li>
@@ -117,7 +117,7 @@
             $('#additems').modal();
         });
         //删除提示
-        function del(obj){
+        async function del(obj){
             var item_id = obj.getAttribute('d');
             if(confirm("确定删除该项目？")){
                 window.location.href="/del_label_item/"+item_id;
@@ -125,7 +125,7 @@
             }
         }
         // 清空提示
-        function reset(obj){
+        async function reset(obj){
             var item_id = obj.getAttribute('d');
             if(confirm("确定清空该项目所有已标注信息？")){
                 window.location.href="/reset_date/"+item_id;

@@ -12,7 +12,7 @@ from just_label import just_label
 app = Flask(__name__)
 app.secret_key = "any random key"
 # graph = Graph('http://localhost:7474', user='neo4j', password='123456')
-graph = Graph('bolt://211.71.75.98:7687', user='neo4j', password='zss1234')  #实验室Neo4j数据库连接
+graph = Graph('bolt://60.2.58.20:7687', user='neo4j', password='zss1234')  #实验室Neo4j数据库连接
 urls = [user, label_items, just_label]  # 用路由构建数组
 for url in urls:
     app.register_blueprint(url)  # 将路由均实现蓝图注册到主app应用上

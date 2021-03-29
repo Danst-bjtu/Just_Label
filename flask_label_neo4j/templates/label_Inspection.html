@@ -31,15 +31,15 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="/Labelitem">首页</a></li>
-            <li class="active"><a href="/just_label/{{item_id}}">数据标注 <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="/just_label/{{item_id}}">数据标注<span class="sr-only">(current)</span></a></li>
             <li><a href="#">知识抽取</a></li><li><a href="#">知识融合</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{session['username']}} <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">个人资料</a></li>
-                <li role="separator" class="divider"></li>
+<!--                <li><a href="#">个人资料</a></li>-->
+<!--                <li role="separator" class="divider"></li>-->
                 <li><a href="/logout">注销</a></li>
               </ul>
             </li>
@@ -69,7 +69,6 @@
 			<div class="panel panel-default panel-primary">
 				<div class="panel-heading">标注文本</div>
 				<div class="panel-body text-warning">
-<!--					<h3><p id="wenben" style="line-height: 40px">别说公开发言，朋友间过于慎言，迹近官腔的交谈，即由虚伪主导，语言无味之余并不能达到有效率的交流。所以，退一万步想，有时宁愿多些听到老友的失言（或往往是真言）。我永世不能忘记的是我一生的知己在酒醉后把我大骂一场，激动处更用球鞋掷过来。礼貌上他是失礼，但我当场哭将起来，知道他对我的关心与痛心肉紧若此，胜过平常饭局上评谈时事娱圈是非之交友正确。从此我每吃一颗安眠药都想起他酒后失仪对我的贡献。可见，失掉大言，得回真相，于人情与世局都有益无害。</p></h3>-->
 				    <h3><p id="wenben" style="line-height: 40px"></p></h3>
                 </div>
 			</div>
@@ -226,7 +225,6 @@
                 data:fenju,
                 dataType:'json',//希望服务器返回json格式的数据
                 success:function(data){
-                    skip=-1;
                     alert(JSON.stringify(data).replaceAll('"',''));
                     var islabel = parseInt(document.getElementById('islabel_count').getAttribute('d'))-1;
                     document.getElementById('reset').setAttribute("disabled","disabled")
@@ -235,6 +233,16 @@
                     var zhanbi = islabel*100/sen_count;
                     document.getElementById('progress').style.width=zhanbi+'%';
                     document.getElementById('progress_content').innerHTML = islabel+"/"+sen_count+" Complete";
+                    if(skip<=islabel-1){
+                        skip-=1;
+                        Next();
+                    }
+                    else{
+                        skip-=2;
+                        Next();
+                        // $("#entitytempleteTBody").nextAll().remove();
+                        // $("#relationtempleteTBody").nextAll().remove();
+                    }
                 }
             });
         }
