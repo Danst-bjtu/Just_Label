@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>标注项目</title>
+    <link rel="icon" href="../static/images/logo.png">
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
     <script src="./js/vue.min.js"></script>
 </head>
-<body>
+<body style="background: url(../static/images/background.png) no-repeat;background-size:100%,100%;">
     <div class="clearfix"></div>
     <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -49,7 +50,7 @@
     <div class="container">
         <div class="col-md-10" style="margin: auto;float: none;display: block">
             {% if label_items %}
-                <table class="table table-striped table-hover text-center">
+                <table  frame=hsides border="3px" class="table table-hover text-center">
                     <tr>
                         <th style="text-align:center;">项目名称</th>
                         <th style="text-align:center;">项目描述</th>

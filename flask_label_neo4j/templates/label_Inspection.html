@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>label_inspection</title>
+    <link rel="icon" href="../static/images/logo.png">
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background: url(../static/images/background.png) no-repeat;background-size:100%,100%;">
 <!--所有分句数量-->
     <div id="sen_count" d="{{sen_count[0]['count(q)']}}" style="display:none"></div>
 <!--已标注分句数量-->
@@ -66,7 +67,7 @@
     <div class="clearfix"></div>
     <div class="container-fluid">
         <div class="col-md-9">
-			<div class="panel panel-default panel-primary">
+			<div class="panel panel-default panel-primary" style="background-color: transparent">
 				<div class="panel-heading">标注文本</div>
 				<div class="panel-body text-warning">
 				    <h3><p id="wenben" style="line-height: 40px"></p></h3>
