@@ -48,6 +48,17 @@ def label_inspection(item_id):
     return render_template('label_Inspection.html', item_id=item_id, sen_count=sen_count, islabel_count=islabel_count, zhanbi=zhanbi)
 
 
+# 知识抽取
+@app.route('/extract')
+def extract():
+    return render_template('extract.html')
+
+
+# 知识融合
+@app.route('/fuse')
+def fuse():
+    return render_template('fuse.html')
+
 if __name__ == '__main__':
     app.config['JSON_AS_ASCII'] = False
     app.run()
